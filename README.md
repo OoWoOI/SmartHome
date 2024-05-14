@@ -38,11 +38,13 @@
   - 函数原型：
     ```C
     int socket_create(const int port);// 创建socket套接字，并绑定端口注册监听事件
+
     ```
   - 参数说明
-    - `port`：指定端口；
+     - `port`：指定端口；
+
   - 返回值：创建成功返回`sockfd`，失败返回`-1`;
-  
+
   （2）`socket_connect()` 函数：
   - 函数原型：
      ```C
@@ -72,7 +74,7 @@
   - 函数原型：
 
     ```C
-      int get_conf_val(const char *filepath, const char *key, char * * val);//根据key获取val;
+      int get_conf_val(const char *filepath, const char *key, char *(*val));//根据key获取val;
     ```
   - 参数说明：
     - `filepath`：配置文件
@@ -80,7 +82,34 @@
     - `val`：传出参数，获得的val值
   
   - 返回值：成功返回`0`, 并且赋值`val`, 失败返回`-1`, `val`为NULL,
-      
+
+### IO设置
+（1）`make_nonblock()`函数:
+    - 函数原型：
+    ```C
+     int make_nonblock(int fd);//设置fd为非阻塞IO
+
+    ```
+    - 参数说明：
+     - `fd` : IO文件描述符
+
+    - 返回值: 成功返回修改后的`fd`, 否则返回`-1`;
+
+
+
+（2）`make_block()`函数：
+    - 函数原型：
+    ```
+     int make_block(int fd);//设置fd为阻塞IO
+    ```
+    - 参数说明:
+        - `fd`: IO文件描述符
+
+    - 返回值: 成功返回修改后的`fd`, 否则返回`-1`;
+
+
+
+
 ### 数据库
 
 
