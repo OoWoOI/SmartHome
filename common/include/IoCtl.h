@@ -7,4 +7,10 @@
 
 #ifndef _IOCTL_H
 #define _IOCTL_H
+
+#include <fcntl.h>
+
+int make_nonblock(int fd);
+int make_block(int fd);
+
 #endif

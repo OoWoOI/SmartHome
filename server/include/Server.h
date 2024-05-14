@@ -9,9 +9,18 @@
 #define _SERVER_H
 
 #include <stdio.h>
+#include <unistd.h>
+#include <sys/epoll.h>
+
+
 #include "../common/include/Conf.h"
 #include "../include/ServerConf.h"
+#include "./ServerLog.h"
+#include "../common/include/NetWork.h"
+#include "../common/include/IoCtl.h"
 
+
+#define MAX_EVENTS 100
 #define CONF_PATH "./conf/server.ini"
 
 typedef struct Server {
