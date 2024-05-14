@@ -68,9 +68,11 @@
 
 ### 配置文件
 （1）`get_conf_val()`函数：
+
   - 函数原型：
+
     ```C
-      int get_conf_val(const char *filepath, const char *key, char *val);//根据key获取val;
+      int get_conf_val(const char *filepath, const char *key, char * * val);//根据key获取val;
     ```
   - 参数说明：
     - `filepath`：配置文件
