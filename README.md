@@ -11,7 +11,7 @@
 
 ## 技术选型
 
-- 编程语言：C/C++、makefile
+- 编程语言：C/C++、makefile、shell
 - 客户端界面：终端编程（ncurse库）
 - 服务端：socket套接字、epoll（主从反应堆模式）
 - 数据库：MySQL
