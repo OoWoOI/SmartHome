@@ -59,7 +59,7 @@
 （1）`log_event()`函数：
  - 函数原型：
    ```C
-     int log_event(const char *logfile, const int level, const char *msg);//向日志文件中打印日志信息
+     void log_event(const char *logfile, const int level, const char *msg);//向日志文件中打印日志信息
    ```
  - 参数说明：
    - `logfile`：日志文件的路径
