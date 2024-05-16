@@ -41,8 +41,9 @@ int handleEvent(int fd) {
     char buffer[MAX_BUFFER_SIZE];
     ssize_t bytes = read(fd, buffer, MAX_BUFFER_SIZE);
     if (bytes > 0) {
-        printf("Received message from client: %s\n", buffer);
         // 在这里可以进行具体的业务处理
+        //解析字符串
+
     } else if (bytes == 0) {
         // 客户端关闭连接
         printf("Client closed connection\n");

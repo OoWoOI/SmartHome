@@ -1,10 +1,9 @@
 /*************************************************************************
-	> File Name: client.h
+	> File Name: ClientSignal.c
 	> Author: 
 	> Mail: 
-	> Created Time: Mon 13 May 2024 10:28:06 PM CST
+	> Created Time: Thu 16 May 2024 04:12:57 PM CST
  ************************************************************************/
 
-#ifndef _CLIENT_H
-#define _CLIENT_H
-#endif
+#include<stdio.h>
+
