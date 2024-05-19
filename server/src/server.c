@@ -140,20 +140,14 @@ void sub_reactor_run(SubReactor *sub_reactor) {
 
 
 void get_client_info(int client_fd, char *client_ip, int *client_port) {
-    
     struct sockaddr_in client_addr;
-
     socklen_t addr_len = sizeof(struct sockaddr_in);
-
     if (getpeername(client_fd, (struct sockaddr *)&client_addr, &addr_len) == -1) {
         PRINT(LOG_LEVEL_ERROR, "getpeername 失败");
         return ;
     }
-    
     inet_ntop(AF_INET, &client_addr.sin_addr, client_ip, INET_ADDRSTRLEN);
-
     *client_port = ntohs(client_addr.sin_port);
-    
     return ;
 }
 
