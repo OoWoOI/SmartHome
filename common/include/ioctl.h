@@ -1,13 +1,14 @@
 /*************************************************************************
-	> File Name: ClientSignal.h
+	> File Name: IoCtl.h
 	> Author: 
 	> Mail: 
-	> Created Time: Thu 16 May 2024 04:18:22 PM CST
+	> Created Time: Mon 13 May 2024 10:21:29 PM CST
  ************************************************************************/
 
-#ifndef _CLIENTSIGNAL_H
-#define _CLIENTSIGNAL_H
+#ifndef _IOCTL_H
+#define _IOCTL_H
 
-void logout();//退出登录
+int make_nonblock(int fd);
+int make_block(int fd);
 
 #endif

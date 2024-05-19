@@ -5,8 +5,7 @@
 	> Created Time: Tue 14 May 2024 05:38:18 PM CST
  ************************************************************************/
 
-#include "../include/Log.h"
-
+#include "../include/head.h"
 
 void log_event(const char *logfile, const int level, const char *msg) {
     time_t now = time(NULL);
@@ -15,15 +14,15 @@ void log_event(const char *logfile, const int level, const char *msg) {
     FILE *fp;
 
     switch (level) {
-        case LOG_EVENT_NORMAL: {
+        case LOG_LEVEL_NORMAL: {
             level_str = "INFO";
         } break;
 
-        case LOG_EVENT_WARNING : {
+        case LOG_LEVEL_WARNING : {
             level_str = "WARNING";
         } break;
 
-        case LOG_EVENT_ERROR : {
+        case LOG_LEVEL_ERROR : {
             level_str = "ERROR";
         } break;
 

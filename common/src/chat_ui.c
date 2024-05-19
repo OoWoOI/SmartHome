@@ -1,11 +1,12 @@
 /*************************************************************************
-	> File Name: ClientUI.c
+	> File Name: ChatUI.c
 	> Author: 
 	> Mail: 
-	> Created Time: Thu 16 May 2024 08:08:11 PM CST
+	> Created Time: Fri 17 May 2024 02:21:43 PM CST
  ************************************************************************/
 
-#include "../include/ClientUI.h"
+
+#include "../include/head.h"
 
 extern WINDOW *message_win, *message_sub,  *info_win, *input_win, *info_sub;
 extern int message_num;
@@ -49,7 +50,7 @@ void w_gotoxy_putc(WINDOW *win, int x, int y, int c) {
 }
 
 void w_gotoxy_puts(WINDOW *win, int x, int y, char *s) {
-    mvwprintw(win, y, x, s);
+    mvwprintw(win, y, x, "%s" ,s);
     move(LINES - 1, 1);
     wrefresh(win);
 }

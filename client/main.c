@@ -8,5 +8,5 @@
 #include "./include/Client.h"
 
 int main() {
-    return client_run();
+    return run_client();
 }

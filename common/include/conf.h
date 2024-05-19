@@ -1,16 +1,14 @@
 /*************************************************************************
-	> File Name: IoCtl.h
+	> File Name: Conf.h
 	> Author: 
 	> Mail: 
-	> Created Time: Mon 13 May 2024 10:21:29 PM CST
+	> Created Time: Tue 14 May 2024 09:19:40 AM CST
  ************************************************************************/
 
-#ifndef _IOCTL_H
-#define _IOCTL_H
+#ifndef _CONF_H
+#define _CONF_H
 
-#include <fcntl.h>
 
-int make_nonblock(int fd);
-int make_block(int fd);
+int get_conf_val(const char *filepath, const char *key, char **val);
 
 #endif

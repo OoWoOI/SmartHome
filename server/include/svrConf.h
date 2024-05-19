@@ -8,13 +8,10 @@
 #ifndef _SERVERCONF_H
 #define _SERVERCONF_H
 
+#define SVRCONF "./conf/server.ini"
 
-#include "../../common/include/Utils.h"
-#include "../../common/include/RetVal.h"
-#include "../../common/include/Conf.h"
-
-int GetPort(const char *path);//获取端口号
-int GetConns(const char *path);//获取最大连接数
+int getSvrPort();//获取端口号
+int getSvrConns();//获取最大连接数
 
 
 

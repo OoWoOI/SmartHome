@@ -5,8 +5,7 @@
 	> Created Time: Tue 14 May 2024 09:20:40 AM CST
  ************************************************************************/
 
-#include "../include/RetVal.h"
-#include "../include/Conf.h"
+#include "../include/head.h"
 
 int get_conf_val(const char *filepath, const char *key, char **val) {
     FILE *fp = NULL;

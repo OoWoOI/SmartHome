@@ -1,30 +1,26 @@
 /*************************************************************************
-	> File Name: client.h
+	> File Name: Client.h
 	> Author: 
 	> Mail: 
-	> Created Time: Mon 13 May 2024 10:28:06 PM CST
+	> Created Time: Fri 17 May 2024 02:32:55 PM CST
  ************************************************************************/
 
 #ifndef _CLIENT_H
 #define _CLIENT_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <signal.h>
-#include "./ClientMSG.h"
-#include "./ClientSignal.h"
-#include "../common/include/NetWork.h"
+#include "../common/include/Head.h"
 #include "./ClientConf.h"
 #include "./ClientLog.h"
-#include "../common/include/DataTypes.h"
 
+//客户端基本信息
 struct Client_Info {
-    char *server_ip;
-    int server_port;
+    char *svrIp;
+    int svrPort;
     int sockfd;
 };
 
-int client_run();
+int run_client();
+
+
 
 #endif

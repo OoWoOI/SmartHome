@@ -2,3 +2,23 @@ Tue May 14 17:57:54 2024
  [INFO] : æµ‹è¯•æ—¥å¿—æ–‡ä»¶
 Tue May 14 18:38:00 2024
  [INFO] : æµ‹è¯•æ—¥å¿—æ–‡ä»¶
+Fri May 17 22:36:24 2024
+ [ERROR] : Get Conf Val SERVER_PORT But FILE_NOT_EXIST
+Sun May 19 10:37:42 2024
+ [INFO] : ÿû
+Sun May 19 10:37:46 2024
+ [INFO] : ÿû
+Sun May 19 10:37:47 2024
+ [ERROR] : Send HeartBeat Error
+Sun May 19 10:37:47 2024
+ [ERROR] : Send HeartBeat Error
+Sun May 19 10:56:58 2024
+ [ERROR] : getpeername å¤±è´¥
+Sun May 19 10:56:58 2024
+ [INFO] : ÿû
+Sun May 19 10:57:00 2024
+ [INFO] : ÿû
+Sun May 19 10:57:01 2024
+ [ERROR] : Send HeartBeat Error
+Sun May 19 10:57:01 2024
+ [ERROR] : Send HeartBeat Error

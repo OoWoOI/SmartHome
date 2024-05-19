@@ -5,21 +5,23 @@
 	> Created Time: Tue 14 May 2024 10:31:07 AM CST
  ************************************************************************/
 
-#include "../include/ServerConf.h"
+#include "../common/include/head.h"
+#include "../include/svrConf.h"
+#include "../include/svrLog.h"
 
-int GetPort(const char *path) {
+int getSvrPort() {
     char *confVal = NULL;
     int ret;
-    if ((ret = get_conf_val(path, "SERVER_PORT", &confVal)) != SUCCESS) {
+    if ((ret = get_conf_val(SVRCONF, "SERVER_PORT", &confVal)) != SUCCESS) {
         switch (ret) {
             case FILE_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_PORT But FILE_NOT_EXIST\n");
+                PRINT(LOG_LEVEL_ERROR, "Get Conf Val SERVER_PORT But FILE_NOT_EXIST");
             } break;
             case KEY_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_PORT But KEY_NOT_EXIST\n");
+                PRINT(LOG_LEVEL_ERROR, "Get Conf Val SERVER_PORT But KEY_NOT_EXIST");
             } break;
             default : {
-                DBG("Get Conf Val SERVER_PORT But UNKNOW ERROR\n");
+                PRINT(LOG_LEVEL_ERROR, "Get Conf Val SERVER_PORT But UNKNOW ERROR");
             } break;
         }
         exit(-1);
@@ -28,19 +30,19 @@ int GetPort(const char *path) {
    return atoi(confVal); 
 }
 
-int GetConns(const char *path) {
+int getSvrConns() {
     char *confVal = NULL;
     int ret;
-    if ((ret = get_conf_val(path, "SERVER_CONNS", &confVal)) != SUCCESS) {
+    if ((ret = get_conf_val(SVRCONF, "SERVER_CONNS", &confVal)) != SUCCESS) {
         switch (ret) {
             case FILE_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_CONNS But FILE_NOT_EXIST\n");
+                PRINT(LOG_LEVEL_ERROR, "Get Conf Val SERVER_CONNS But FILE_NOT_EXIST");
             } break;
             case KEY_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_CONNS But KEY_NOT_EXIST\n");
+                PRINT(LOG_LEVEL_ERROR, "Get Conf Val SERVER_CONNS But KEY_NOT_EXIST");
             } break;
             default : {
-                DBG("Get Conf Val SERVER_CONNS But UNKNOW ERROR\n");
+                PRINT(LOG_LEVEL_ERROR, "Get Conf Val SERVER_CONNS But UNKNOW ERROR");
             } break;
         }
         exit(-1);

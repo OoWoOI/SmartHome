@@ -2,48 +2,50 @@
 	> File Name: ClientConf.c
 	> Author: 
 	> Mail: 
-	> Created Time: Wed 15 May 2024 08:40:36 AM CST
+	> Created Time: Fri 17 May 2024 03:05:01 PM CST
  ************************************************************************/
 
-#include "../include/ClientConf.h"
 
-char *Get_Server_Ip() {
-    char *confVal = NULL;
+#include "../common/include/Head.h"
+#include "../include/ClientConf.h"
+#include "../include/ClientLog.h"
+
+int getSvrPort() {
+    char *confVal = NULL; 
     int ret;
-    if ((ret = get_conf_val(LOGFILE, "SERVER_IP", &confVal)) != SUCCESS) {
+    if ((ret = get_conf_val(CLNCONF, "SERVER_PORT", &confVal)) < 0) {
         switch (ret) {
-            case FILE_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_IP But FILE_NOT_EXIST\n");
+            case FILE_NOT_EXIST : {
+                PRINT(LOG_LEVEL_ERROR, "get cln server port but file not exist");
             } break;
-            case KEY_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_IP But KEY_NOT_EXIST\n");
+            case KEY_NOT_EXIST : {
+                PRINT(LOG_LEVEL_ERROR, "get cln server port but key not exist");
             } break;
             default : {
-                DBG("Get Conf Val SERVER_IP But UNKNOW ERROR\n");
+                PRINT(LOG_LEVEL_ERROR , "get cln server port but unknow error"); 
             } break;
         }
-        exit(-1);
-    } 
-    return confVal;
+        exit(EXIT_FAILURE);
+    }
+    return atoi(confVal);
 }
 
-
-int Get_Server_Port() {
-    char *confVal = NULL;
+char *getSvrIp() {
+    char *confVal = NULL; 
     int ret;
-    if ((ret = get_conf_val(LOGFILE, "SERVER_PORT", &confVal)) != SUCCESS) {
+    if ((ret = get_conf_val(CLNCONF, "SERVER_IP", &confVal)) < 0) {
         switch (ret) {
-            case FILE_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_PORT But FILE_NOT_EXIST\n");
+            case FILE_NOT_EXIST : {
+                PRINT(LOG_LEVEL_ERROR , "get cln server ip but file not exist");
             } break;
-            case KEY_NOT_EXIST: {
-                DBG("Get Conf Val SERVER_PORT But KEY_NOT_EXIST\n");
+            case KEY_NOT_EXIST : {
+                PRINT(LOG_LEVEL_ERROR ,"get cln server ip but key not exist");
             } break;
             default : {
-                DBG("Get Conf Val SERVER_PORT But UNKNOW ERROR\n");
+                PRINT(LOG_LEVEL_ERROR , "get cln server ip but unknow error"); 
             } break;
         }
-        exit(-1);
-    } 
-    return atoi(confVal); 
+        exit(EXIT_FAILURE);
+    }
+    return confVal;
 }
